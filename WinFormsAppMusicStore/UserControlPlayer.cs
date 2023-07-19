@@ -194,7 +194,11 @@ namespace WinFormsAppMusicStore
             if (index != System.Windows.Forms.ListBox.NoMatches)
             {
                 player.Stop();
-                listBoxAudio.SelectedIndex = index;
+                var selectedItem = listBoxAudio.SelectedItem;
+                if (selectedItem != null)
+                {
+                    player.Open(new Uri(((AudioOperation)selectedItem).PathFileAudio));
+                }
                 buttonPlay_Click(null, null);
             }
         }
