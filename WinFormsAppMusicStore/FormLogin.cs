@@ -11,13 +11,14 @@ namespace WinFormsAppMusicStore
     {
         private WebService _webService;
         private ILogger _logger;
+        private IFileManager _fileManager;
 
         public FormLogin(ILogger logger, IFileManager fileManager)
         {
             InitializeComponent();
-            fileManager.CreateDictories();
             _logger = logger;
-            _webService = new WebService(GetIpWebService(), GetTimeoutWebService(), fileManager);
+            _fileManager = fileManager;
+            _webService = new WebService(GetIpWebService(), GetTimeoutWebService(), _fileManager);
         }
 
         private string GetIpWebService()
@@ -101,20 +102,24 @@ namespace WinFormsAppMusicStore
             if (resultUserAccess.status == false)
             {
                 UpdateUiFromLoadStore((resultUserAccess.status, resultUserAccess.statusMessage));
+                _logger.Error("UserAccess: " + resultUserAccess.statusMessage);
                 goto ERROR_LOGGIN;
             }
 
             _webService.SetToken(resultUserAccess.data.token);
 
-            var resulttRegister = await _webService.RegisterService.RegisterInsert(new Register { storeId = resultUserAccess.data.user.storeId, creationDateTime = DateTime.Now });
+            var resultStoreGetAll = await _webService.StoreService.StoreGetAll();
 
-            if (resulttRegister.status == false)
+            if (resultStoreGetAll.status == false)
             {
-                UpdateUiFromLoadStore((resulttRegister.status, resulttRegister.statusMessage));
+                UpdateUiFromLoadStore((resultStoreGetAll.status, resultStoreGetAll.statusMessage));
+                _logger.Error("StoreGetAll: " + resultUserAccess.statusMessage);
                 goto ERROR_LOGGIN;
             }
 
-            LaunchMainWindows(resultUserAccess.data.user);
+            _fileManager.CreateDictoryAndFile();
+
+            LaunchMainWindows(resultUserAccess.data.user, resultStoreGetAll.data);
             Close();
 
         ERROR_LOGGIN:
@@ -135,10 +140,16 @@ namespace WinFormsAppMusicStore
             textBoxUserPassword.Enabled = true;
         }
 
-        private void LaunchMainWindows(User activeUser)
+        private void ClearTextFileds()
+        {
+            textBoxUserAlias.Text = String.Empty;
+            textBoxUserPassword.Text = String.Empty;
+        }
+
+        private void LaunchMainWindows(User activeUser, List<Store> stores)
         {
             this.Hide();
-            FormMain formMain = new FormMain(_webService, _logger, activeUser);
+            FormMain formMain = new FormMain(_webService, _logger, activeUser, stores);
             formMain.ShowDialog();
             formMain.Close();
         }

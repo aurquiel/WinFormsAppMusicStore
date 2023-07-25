@@ -2,16 +2,7 @@
 using ClassLibraryModels;
 using ClassLibraryServices;
 using Serilog;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 
 namespace WinFormsAppMusicStore
 {
@@ -21,17 +12,20 @@ namespace WinFormsAppMusicStore
         private ILogger _logger;
         private IFileManager _fileManager;
         private EventHandler<(bool, string)> _raiseRichTextInsertMessage;
-        private User _user;
 
-        public FormMain(IServices services, ILogger logger, User user)
+        private User _user;
+        private List<Store> _stores;
+
+        public FormMain(IServices services, ILogger logger, User user, List<Store> stores)
         {
             InitializeComponent();
             WireUpEvents();
             _services = services;
             _logger = logger;
             _user = user;
+            _stores = stores;
             _fileManager = new FileManager();
-            OpenChildForm(new UserControlPlayer(_services, _fileManager, _raiseRichTextInsertMessage));
+            OpenChildForm(new UserControlPlayer(_services, _fileManager, _logger, _user, stores, _raiseRichTextInsertMessage));
         }
 
         protected override CreateParams CreateParams
@@ -85,6 +79,7 @@ namespace WinFormsAppMusicStore
             richTextBoxStatusMessages.ScrollToCaret();
             richTextBoxStatusMessages.ResumeLayout();
         }
+
 
         private void OpenChildForm(UserControl childForm)
         {

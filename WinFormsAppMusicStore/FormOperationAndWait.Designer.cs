@@ -1,6 +1,6 @@
 ﻿namespace WinFormsAppMusicStore
 {
-    partial class FormWait
+    partial class FormOperationAndWait
     {
         /// <summary>
         /// Required designer variable.
@@ -50,9 +50,10 @@
             panel4.Controls.Add(panel5);
             panel4.Dock = DockStyle.Fill;
             panel4.Location = new Point(0, 0);
+            panel4.Margin = new Padding(3, 4, 3, 4);
             panel4.Name = "panel4";
-            panel4.Padding = new Padding(4, 4, 4, 4);
-            panel4.Size = new Size(514, 192);
+            panel4.Padding = new Padding(5, 5, 5, 5);
+            panel4.Size = new Size(760, 256);
             panel4.TabIndex = 6;
             // 
             // panel5
@@ -66,9 +67,10 @@
             panel5.Controls.Add(label2);
             panel5.Controls.Add(label1);
             panel5.Dock = DockStyle.Fill;
-            panel5.Location = new Point(4, 4);
+            panel5.Location = new Point(5, 5);
+            panel5.Margin = new Padding(3, 4, 3, 4);
             panel5.Name = "panel5";
-            panel5.Size = new Size(506, 184);
+            panel5.Size = new Size(750, 246);
             panel5.TabIndex = 3;
             // 
             // labelMessage
@@ -76,26 +78,26 @@
             labelMessage.AutoSize = true;
             labelMessage.Font = new Font("Segoe UI", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             labelMessage.ForeColor = Color.DarkGreen;
-            labelMessage.Location = new Point(208, 94);
+            labelMessage.Location = new Point(238, 125);
             labelMessage.Name = "labelMessage";
-            labelMessage.Size = new Size(106, 15);
+            labelMessage.Size = new Size(137, 20);
             labelMessage.TabIndex = 21;
             labelMessage.Text = "por favor espere...";
             // 
             // labelOperation
             // 
-            labelOperation.Location = new Point(208, 71);
+            labelOperation.Location = new Point(238, 95);
             labelOperation.Name = "labelOperation";
-            labelOperation.Size = new Size(290, 22);
+            labelOperation.Size = new Size(505, 29);
             labelOperation.TabIndex = 20;
             // 
             // labelTotalNumber
             // 
             labelTotalNumber.AutoSize = true;
             labelTotalNumber.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            labelTotalNumber.Location = new Point(412, 42);
+            labelTotalNumber.Location = new Point(471, 56);
             labelTotalNumber.Name = "labelTotalNumber";
-            labelTotalNumber.Size = new Size(19, 21);
+            labelTotalNumber.Size = new Size(24, 28);
             labelTotalNumber.TabIndex = 19;
             labelTotalNumber.Text = "1";
             // 
@@ -103,9 +105,9 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(358, 42);
+            label4.Location = new Point(409, 56);
             label4.Name = "label4";
-            label4.Size = new Size(29, 21);
+            label4.Size = new Size(35, 28);
             label4.TabIndex = 18;
             label4.Text = "de";
             // 
@@ -113,9 +115,9 @@
             // 
             labelActualNumber.AutoSize = true;
             labelActualNumber.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            labelActualNumber.Location = new Point(319, 42);
+            labelActualNumber.Location = new Point(365, 56);
             labelActualNumber.Name = "labelActualNumber";
-            labelActualNumber.Size = new Size(19, 21);
+            labelActualNumber.Size = new Size(24, 28);
             labelActualNumber.TabIndex = 17;
             labelActualNumber.Text = "1";
             // 
@@ -123,31 +125,30 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(208, 42);
+            label2.Location = new Point(238, 56);
             label2.Name = "label2";
-            label2.Size = new Size(89, 21);
+            label2.Size = new Size(109, 28);
             label2.TabIndex = 16;
             label2.Text = "Operacion";
             // 
             // label1
             // 
             label1.Image = Properties.Resources.loader;
-            label1.Location = new Point(8, 0);
+            label1.Location = new Point(9, 0);
             label1.Name = "label1";
-            label1.Size = new Size(194, 184);
+            label1.Size = new Size(223, 246);
             label1.TabIndex = 0;
             // 
-            // FormWait
+            // FormOperationAndWait
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(514, 192);
+            ClientSize = new Size(760, 256);
             Controls.Add(panel4);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(3, 2, 3, 2);
             MaximizeBox = false;
             MinimizeBox = false;
-            Name = "FormWait";
+            Name = "FormOperationAndWait";
             StartPosition = FormStartPosition.Manual;
             Text = "FormWait";
             TopMost = true;

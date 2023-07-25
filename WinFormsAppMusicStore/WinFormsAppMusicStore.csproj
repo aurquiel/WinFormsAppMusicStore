@@ -32,10 +32,15 @@
     <None Remove="Resources\pc.png" />
     <None Remove="Resources\play.png" />
     <None Remove="Resources\refresh.png" />
+    <None Remove="Resources\refreshListStore.png" />
     <None Remove="Resources\replicaDown.png" />
     <None Remove="Resources\saveCloud.png" />
     <None Remove="Resources\search.png" />
+    <None Remove="Resources\selectAll.png" />
+    <None Remove="Resources\selectAudio.png" />
     <None Remove="Resources\stop.png" />
+    <None Remove="Resources\synchronizeAllStores.png" />
+    <None Remove="Resources\unselectAll.png" />
     <None Remove="Resources\upArrow.png" />
     <None Remove="Resources\upload.png" />
     <None Remove="Resources\volume.png" />
@@ -78,6 +83,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ClassLibraryExcel\ClassLibraryExcel.csproj" />
     <ProjectReference Include="..\ClassLibraryFiles\ClassLibraryFiles.csproj" />
     <ProjectReference Include="..\ClassLibraryServices\ClassLibraryServices.csproj" />
   </ItemGroup>
@@ -128,6 +134,9 @@
     <Resource Include="Resources\refresh.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Resources\refreshListStore.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Resources\replicaDown.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
@@ -137,7 +146,19 @@
     <Resource Include="Resources\search.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Resources\selectAll.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\selectAudio.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Resources\stop.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\synchronizeAllStores.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\unselectAll.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\upArrow.png">

@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace ClassLibraryModels
 {
-    public class Register
+    public class RegisterDisplay
     {
-        public int id { get; set; }
-        public int storeId { get; set; }
+        public string storeCode { get; set; }
         public string operation { get; set; }
         public DateTime creationDateTime { get; set; }
     }

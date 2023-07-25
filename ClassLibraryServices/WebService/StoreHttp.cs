@@ -39,7 +39,7 @@ namespace ClassLibraryServices.WebService
                 {
                     return (
                         false,
-                        "Error al obtener Usuarios del servidor. Estatus: " + response.StatusCode,
+                        "Error al obtener Tiendas del servidor. Estatus: " + response.StatusCode,
                         null);
                 }
             }

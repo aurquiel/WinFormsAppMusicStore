@@ -19,9 +19,9 @@ namespace ClassLibraryServices.WebService
             _fileManager = fileManager;
         }
 
-        public async Task<GeneralAnswer<string>> DownloadAudioList()
+        public async Task<GeneralAnswer<string>> DownloadAudioListServer()
         {
-            var result = await AudioHttp.AduioGetAudioList(_webParams);
+            var result = await AudioHttp.GetAudioList(_webParams);
 
             if (result.Item1) //Obtenido del servidor
             {
@@ -33,25 +33,74 @@ namespace ClassLibraryServices.WebService
             }
         }
 
-        public async Task<GeneralAnswer<object>> SynchronizeAudioList(string plainText)
+        public async Task<GeneralAnswer<string>> DownloadAudioListStore(string storeCode)
         {
-            var result = await AudioHttp.SynchronizeAudioList(_webParams, plainText);
+            var result = await AudioHttp.GetAudioListStore(_webParams, storeCode);
 
-            return new GeneralAnswer<object>(result.Item1, result.Item2, null);
+            if (result.Item1) //Obtenido del servidor
+            {
+                return new GeneralAnswer<string>(result.Item3.status, result.Item3.statusMessage, result.Item3.data);
+            }
+            else // No Obtenido del servidor
+            {
+                return new GeneralAnswer<string>(result.Item1, result.Item2, null);
+            }
         }
 
-        public async Task<GeneralAnswer<object>> UploadAudio(string pathFile)
+        public async Task<GeneralAnswer<string>> SynchronizeAudioListStore(string audioList, string storeCode)
+        {
+            var result = await AudioHttp.SynchronizeAudioListStore(_webParams, audioList, storeCode);
+
+            if (result.Item1) //Obtenido del servidor
+            {
+                return new GeneralAnswer<string>(result.Item3.status, result.Item3.statusMessage, result.Item3.data);
+            }
+            else // No Obtenido del servidor
+            {
+                return new GeneralAnswer<string>(result.Item1, result.Item2, null);
+            }
+        }
+
+        public async Task<GeneralAnswer<object>> UploadAudioServer(string pathFile)
         {
             var result = await AudioHttp.UploadAudio(_webParams, pathFile);
 
             return new GeneralAnswer<object>(result.Item1, result.Item2, null);
         }
 
-        public async Task<GeneralAnswer<object>> DownloadAudio(string audioName)
+        public async Task<GeneralAnswer<object>> DownloadAudioServer(string storeCode, string audioName)
         {
-            var result = await AudioHttp.DownloadAudio(_webParams, audioName, _fileManager);
+            var result = await AudioHttp.DownloadAudio(_webParams, storeCode, audioName, _fileManager);
 
             return new GeneralAnswer<object>(result.Item1, result.Item2, null);
+        }
+
+        public async Task<GeneralAnswer<object>> DeleteAudioServer(string audioName)
+        {
+            var result = await AudioHttp.DeleteAudio(_webParams, audioName);
+
+            if (result.Item1) //Obtenido del servidor
+            {
+                return new GeneralAnswer<object>(result.Item3.status, result.Item3.statusMessage, result.Item3.data);
+            }
+            else // No Obtenido del servidor
+            {
+                return new GeneralAnswer<object>(result.Item1, result.Item2, null);
+            }
+        }
+
+        public async Task<GeneralAnswer<object>> SynchronizeAudioListAllStore()
+        {
+            var result = await AudioHttp.SynchronizeAudioListAllStore(_webParams);
+
+            if (result.Item1) //Obtenido del servidor
+            {
+                return new GeneralAnswer<object>(result.Item3.status, result.Item3.statusMessage, result.Item3.data);
+            }
+            else // No Obtenido del servidor
+            {
+                return new GeneralAnswer<object>(result.Item1, result.Item2, null);
+            }
         }
     }
 }

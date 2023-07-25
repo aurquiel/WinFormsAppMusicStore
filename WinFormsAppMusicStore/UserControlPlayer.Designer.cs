@@ -30,6 +30,7 @@
         {
             tableLayoutPanel = new TableLayoutPanel();
             panel2 = new Panel();
+            buttonLoadAudioListPc = new Button();
             progressBarAudio = new ProgressBar();
             label2 = new Label();
             trackBarVolume = new TrackBar();
@@ -69,6 +70,7 @@
             // panel2
             // 
             panel2.BackColor = Color.White;
+            panel2.Controls.Add(buttonLoadAudioListPc);
             panel2.Controls.Add(progressBarAudio);
             panel2.Controls.Add(label2);
             panel2.Controls.Add(trackBarVolume);
@@ -83,11 +85,27 @@
             panel2.Size = new Size(923, 51);
             panel2.TabIndex = 22;
             // 
+            // buttonLoadAudioListPc
+            // 
+            buttonLoadAudioListPc.BackColor = Color.White;
+            buttonLoadAudioListPc.FlatStyle = FlatStyle.Flat;
+            buttonLoadAudioListPc.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonLoadAudioListPc.ForeColor = Color.Black;
+            buttonLoadAudioListPc.Image = Properties.Resources.pc;
+            buttonLoadAudioListPc.Location = new Point(3, 4);
+            buttonLoadAudioListPc.Margin = new Padding(3, 4, 3, 4);
+            buttonLoadAudioListPc.Name = "buttonLoadAudioListPc";
+            buttonLoadAudioListPc.Size = new Size(37, 36);
+            buttonLoadAudioListPc.TabIndex = 29;
+            buttonLoadAudioListPc.TextAlign = ContentAlignment.MiddleLeft;
+            buttonLoadAudioListPc.UseVisualStyleBackColor = false;
+            buttonLoadAudioListPc.Click += buttonLoadAudioListPc_Click;
+            // 
             // progressBarAudio
             // 
             progressBarAudio.BackColor = Color.White;
             progressBarAudio.ForeColor = Color.Blue;
-            progressBarAudio.Location = new Point(226, 18);
+            progressBarAudio.Location = new Point(326, 18);
             progressBarAudio.Name = "progressBarAudio";
             progressBarAudio.Size = new Size(309, 11);
             progressBarAudio.TabIndex = 28;
@@ -96,7 +114,7 @@
             // label2
             // 
             label2.Image = Properties.Resources.volume;
-            label2.Location = new Point(541, 4);
+            label2.Location = new Point(641, 4);
             label2.Name = "label2";
             label2.Size = new Size(38, 36);
             label2.TabIndex = 27;
@@ -105,7 +123,7 @@
             // 
             trackBarVolume.BackColor = Color.White;
             trackBarVolume.LargeChange = 1;
-            trackBarVolume.Location = new Point(586, 11);
+            trackBarVolume.Location = new Point(686, 11);
             trackBarVolume.Margin = new Padding(3, 4, 3, 4);
             trackBarVolume.Maximum = 100;
             trackBarVolume.Name = "trackBarVolume";
@@ -121,7 +139,7 @@
             buttonStop.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
             buttonStop.ForeColor = Color.Black;
             buttonStop.Image = Properties.Resources.stop;
-            buttonStop.Location = new Point(183, 4);
+            buttonStop.Location = new Point(283, 4);
             buttonStop.Margin = new Padding(3, 4, 3, 4);
             buttonStop.Name = "buttonStop";
             buttonStop.Size = new Size(37, 36);
@@ -137,7 +155,7 @@
             buttonPause.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
             buttonPause.ForeColor = Color.Black;
             buttonPause.Image = Properties.Resources.pause;
-            buttonPause.Location = new Point(139, 4);
+            buttonPause.Location = new Point(239, 4);
             buttonPause.Margin = new Padding(3, 4, 3, 4);
             buttonPause.Name = "buttonPause";
             buttonPause.Size = new Size(37, 36);
@@ -153,7 +171,7 @@
             buttonPlay.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
             buttonPlay.ForeColor = Color.Black;
             buttonPlay.Image = Properties.Resources.play;
-            buttonPlay.Location = new Point(96, 4);
+            buttonPlay.Location = new Point(196, 4);
             buttonPlay.Margin = new Padding(3, 4, 3, 4);
             buttonPlay.Name = "buttonPlay";
             buttonPlay.Size = new Size(37, 36);
@@ -169,7 +187,7 @@
             buttonPullFromServer.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
             buttonPullFromServer.ForeColor = Color.RoyalBlue;
             buttonPullFromServer.Image = Properties.Resources.replicaDown;
-            buttonPullFromServer.Location = new Point(3, 4);
+            buttonPullFromServer.Location = new Point(46, 4);
             buttonPullFromServer.Margin = new Padding(3, 4, 3, 4);
             buttonPullFromServer.Name = "buttonPullFromServer";
             buttonPullFromServer.Size = new Size(37, 36);
@@ -254,12 +272,11 @@
         private Button buttonPause;
         private Button buttonPlay;
         private Button buttonPullFromServer;
-        private Button buttonNext;
-        private Button buttonBack;
         private TrackBar trackBarVolume;
         private Label label2;
         private Panel panel4;
         private Panel panel5;
         private ProgressBar progressBarAudio;
+        private Button buttonLoadAudioListPc;
     }
 }
