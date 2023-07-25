@@ -29,6 +29,7 @@ namespace WinFormsAppMusicStore
 
 
         //Tooltips
+        ToolTip toolTipButtonLoadAudioListPc = new ToolTip();
         ToolTip toolTipButtonPullFromServer = new ToolTip();
         ToolTip toolTipButtonPlay = new ToolTip();
         ToolTip toolTipButtonPause = new ToolTip();
@@ -117,6 +118,7 @@ namespace WinFormsAppMusicStore
 
         private void CreateToolTips()
         {
+            toolTipButtonLoadAudioListPc.SetToolTip(buttonLoadAudioListPc, "Obtener lista de reproduccion del equipo.");
             toolTipButtonPullFromServer.SetToolTip(buttonPullFromServer, "Actualizar lista de reproduccion.");
             toolTipButtonPlay.SetToolTip(buttonPlay, "Reproducir audio.");
             toolTipButtonPause.SetToolTip(buttonPause, "Pausar reproduccion.");
