@@ -193,7 +193,7 @@ namespace WinFormsAppMusicStore
                                     _fileManager.WriteAudioListToBinaryFile(result.data);
 
                                     var listToDowmload = _fileManager.GetAudioListToDownload(audioListArray.ToList());
-                                    if(listToDowmload.Count() > 0)
+                                    if (listToDowmload.Count() > 0)
                                     {
                                         labelTotalNumber.Text = (Int32.Parse(labelTotalNumber.Text) + listToDowmload.Count()).ToString();
                                         foreach (var audio in listToDowmload)

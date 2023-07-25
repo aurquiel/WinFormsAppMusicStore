@@ -52,7 +52,7 @@
             panel4.Location = new Point(0, 0);
             panel4.Margin = new Padding(3, 4, 3, 4);
             panel4.Name = "panel4";
-            panel4.Padding = new Padding(5, 5, 5, 5);
+            panel4.Padding = new Padding(5);
             panel4.Size = new Size(760, 256);
             panel4.TabIndex = 6;
             // 
@@ -145,12 +145,10 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(760, 256);
             Controls.Add(panel4);
-            FormBorderStyle = FormBorderStyle.None;
             MaximizeBox = false;
-            MinimizeBox = false;
             Name = "FormOperationAndWait";
             StartPosition = FormStartPosition.Manual;
-            Text = "FormWait";
+            Text = "Espere...";
             TopMost = true;
             Shown += FormWait_Shown;
             panel4.ResumeLayout(false);
