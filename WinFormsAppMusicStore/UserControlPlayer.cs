@@ -41,11 +41,11 @@ namespace WinFormsAppMusicStore
             InitializeComponent();
             CreateToolTips();
             _services = services;
-            _insertRegisters = new InsertRegisters(_services, logger);
-            _fileManager = fileManager;
-            _raiseRichTextInsertMessage = raiseRichTextInsertMessage;
             _user = user;
             _codeStore = stores.Where(x => x.id == _user.storeId).Select(x => x.code).FirstOrDefault();
+            _insertRegisters = new InsertRegisters(_services, user.storeId, logger);
+            _fileManager = fileManager;
+            _raiseRichTextInsertMessage = raiseRichTextInsertMessage;
             player.MediaEnded += Player_MediaEnded;
             player.MediaFailed += Player_MediaFailed;
             player.MediaOpened += Player_MediaOpened;
@@ -85,8 +85,7 @@ namespace WinFormsAppMusicStore
 
         private void LoadAudioListFromBinaryFile()
         {
-            InitMediaPlayer();
-            _insertRegisters.Add(new Register { storeId = _user.storeId, operation = "Cargando lista de audio de Pc", creationDateTime = DateTime.Now });   
+            InitMediaPlayer(); 
             var operationDetailsList = new List<OperationDetails> {
                 new OperationDetails {
                     Operation = OperationDetails.OPERATIONS.PLAYER_GET_AUDIO_LIST_STORE_PC,
@@ -99,7 +98,6 @@ namespace WinFormsAppMusicStore
         private void buttonPullFromServer_Click(object sender, EventArgs e)
         {
             InitMediaPlayer();
-            _insertRegisters.Add(new Register { storeId = _user.storeId, operation = "Cargando lista de audio del servidor", creationDateTime = DateTime.Now });
             var operationDetailsList = new List<OperationDetails> {
             new OperationDetails {
                 Operation = OperationDetails.OPERATIONS.PLAYER_GET_AUDIO_LIST_STORE_SERVER,
@@ -110,7 +108,6 @@ namespace WinFormsAppMusicStore
 
         private void Player_MediaOpened(object? sender, EventArgs e)
         {
-            _insertRegisters.Add(new Register { storeId = _user.storeId, operation = "Reproduciendo audio: " + Path.GetFileName(player.Source.ToString()), creationDateTime = DateTime.Now });
             _position = player.NaturalDuration.TimeSpan;
             progressBarAudio.Minimum = 0;
             progressBarAudio.Maximum = (int)_position.TotalSeconds;
@@ -211,7 +208,6 @@ namespace WinFormsAppMusicStore
             {
                 listBoxAudio.SelectedIndex = 0;
             }
-            _insertRegisters.Add(new Register { storeId = _user.storeId, operation = "Lista de Audio detenida", creationDateTime = DateTime.Now });
             player.Stop();
         }
 

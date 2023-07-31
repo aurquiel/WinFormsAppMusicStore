@@ -13,37 +13,29 @@ namespace WinFormsAppMusicStore
     internal class InsertRegisters
     {
         private IServices _services;
+        private int _storeId;
         private ILogger _logger;
-        private ConcurrentQueue<Register> _queue = new ConcurrentQueue<Register>(); 
         private Thread _thread;
 
-        public InsertRegisters(IServices services, ILogger logger)
+        public InsertRegisters(IServices services, int storeId, ILogger logger)
         {
             _services = services;
+            _storeId = storeId;
             _logger = logger;
             _thread = new Thread(() => { DoWork(); });
             _thread.Start();
-        }
-
-        public void Add(Register register)
-        {
-            _queue.Enqueue(register);
         }
 
         private async void DoWork()
         {
             while(true)
             {
-                Thread.Sleep(100);
-                if(_queue.Count > 0)
+                var result = await _services.RegisterService.RegisterInsert(new Register { storeId = _storeId, operation = "Aplicacion activa.", creationDateTime = DateTime.Now});
+                if(result.status == false)
                 {
-                    _queue.TryDequeue(out Register register);
-                    var result = await _services.RegisterService.RegisterInsert(register);
-                    if(result.status == false)
-                    {
-                        _logger.Error("Error al insertar registro Thread, " + result.statusMessage);
-                    }
+                    _logger.Error("Error al insertar registro Thread, " + result.statusMessage);
                 }
+                Thread.Sleep(1800000); //30 min de espera para el proximo registro
             }
         }
     }
