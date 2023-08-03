@@ -27,7 +27,8 @@ namespace ClassLibraryFiles
 
             if (!File.Exists(AUDIO_STORE_PATH + "\\audioList.bin"))
             {
-                File.Create(AUDIO_STORE_PATH + "\\audioList.bin");
+                var fs = File.Create(AUDIO_STORE_PATH + "\\audioList.bin");
+                fs.Close();
             }
         }
 
