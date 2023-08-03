@@ -16,6 +16,7 @@ namespace WinFormsAppMusicStore
         private int _storeId;
         private ILogger _logger;
         private Thread _thread;
+        public string Message { get; set; }
 
         public InsertRegisters(IServices services, int storeId, ILogger logger)
         {
@@ -23,6 +24,10 @@ namespace WinFormsAppMusicStore
             _storeId = storeId;
             _logger = logger;
             _thread = new Thread(() => { DoWork(); });
+        }
+
+        public void StarRegister()
+        {
             _thread.Start();
         }
 
@@ -30,7 +35,7 @@ namespace WinFormsAppMusicStore
         {
             while(true)
             {
-                var result = await _services.RegisterService.RegisterInsert(new Register { storeId = _storeId, operation = "Aplicacion activa.", creationDateTime = DateTime.Now});
+                var result = await _services.RegisterService.RegisterInsert(new Register { storeId = _storeId, operation = Message, creationDateTime = DateTime.Now});
                 if(result.status == false)
                 {
                     _logger.Error("Error al insertar registro Thread, " + result.statusMessage);

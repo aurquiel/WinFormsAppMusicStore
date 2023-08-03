@@ -44,6 +44,8 @@ namespace WinFormsAppMusicStore
             _user = user;
             _codeStore = stores.Where(x => x.id == _user.storeId).Select(x => x.code).FirstOrDefault();
             _insertRegisters = new InsertRegisters(_services, user.storeId, logger);
+            _insertRegisters.Message = "Aplicacion abierta, no reproduciendo";
+            _insertRegisters.StarRegister();
             _fileManager = fileManager;
             _raiseRichTextInsertMessage = raiseRichTextInsertMessage;
             player.MediaEnded += Player_MediaEnded;
@@ -85,6 +87,7 @@ namespace WinFormsAppMusicStore
 
         private void LoadAudioListFromBinaryFile()
         {
+            _insertRegisters.Message = "Aplicacion abierta reproduciendo detenida, lista de reproduccion obtenida del equipo";
             InitMediaPlayer(); 
             var operationDetailsList = new List<OperationDetails> {
                 new OperationDetails {
@@ -97,6 +100,7 @@ namespace WinFormsAppMusicStore
 
         private void buttonPullFromServer_Click(object sender, EventArgs e)
         {
+            _insertRegisters.Message = "Aplicacion abierta reproduciendo detenida, intentando obtener lista reprodcucion del servidor.";
             InitMediaPlayer();
             var operationDetailsList = new List<OperationDetails> {
             new OperationDetails {
@@ -108,6 +112,7 @@ namespace WinFormsAppMusicStore
 
         private void Player_MediaOpened(object? sender, EventArgs e)
         {
+            _insertRegisters.Message = "Aplicacion abierta, reproduciendo audio: " + Path.GetFileName(player.Source.ToString());
             _position = player.NaturalDuration.TimeSpan;
             progressBarAudio.Minimum = 0;
             progressBarAudio.Maximum = (int)_position.TotalSeconds;
@@ -198,6 +203,7 @@ namespace WinFormsAppMusicStore
 
         private void buttonPause_Click(object sender, EventArgs e)
         {
+            _insertRegisters.Message = "Aplicacion abierta, reproduciendo pausada: " + Path.GetFileName(player.Source.ToString());
             isPaused = true;
             player.Pause();
         }
@@ -208,6 +214,7 @@ namespace WinFormsAppMusicStore
             {
                 listBoxAudio.SelectedIndex = 0;
             }
+            _insertRegisters.Message = "Aplicacion abierta, reproduciendo detenida";
             player.Stop();
         }
 
