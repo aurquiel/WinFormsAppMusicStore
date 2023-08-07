@@ -150,6 +150,7 @@
             StartPosition = FormStartPosition.Manual;
             Text = "Espere...";
             TopMost = true;
+            FormClosing += FormOperationAndWait_FormClosing;
             Shown += FormWait_Shown;
             panel4.ResumeLayout(false);
             panel5.ResumeLayout(false);

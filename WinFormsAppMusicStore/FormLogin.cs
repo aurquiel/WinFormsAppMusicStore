@@ -18,7 +18,7 @@ namespace WinFormsAppMusicStore
             InitializeComponent();
             _logger = logger;
             _fileManager = fileManager;
-            _webService = new WebService(GetIpWebService(), GetTimeoutWebService(), _fileManager);
+            _webService = new WebService(GetIpWebService(), GetTimeoutWebService(), GetTimeoutWebServiceHeavyTask(), _fileManager);
         }
 
         private string GetIpWebService()
@@ -29,7 +29,7 @@ namespace WinFormsAppMusicStore
             }
             catch (Exception ex)
             {
-                _logger.Error(ex, "Error al obtner ip del webserice del archivo de configuracion", null);
+                _logger.Error(ex, "Error al obtener ip del webserice del archivo de configuracion", null);
                 return "https://192.168.0.203:9097/";
             }
         }
@@ -42,8 +42,21 @@ namespace WinFormsAppMusicStore
             }
             catch (Exception ex)
             {
-                _logger.Error(ex, "Error al obtner timeout del webserice del archivo de configuracion", null);
-                return 600; //10 min para descargar una cancion
+                _logger.Error(ex, "Error al obtener timeout del webserice del archivo de configuracion", null);
+                return 25;
+            }
+        }
+
+        private int GetTimeoutWebServiceHeavyTask()
+        {
+            try
+            {
+                return Int32.Parse(ConfigurationManager.AppSettings["TIMEOUT_WEB_SERVICE_HEAVY_TASK"].ToString());
+            }
+            catch (Exception ex)
+            {
+                _logger.Error(ex, "Error al obtener timeout del webserice del archivo de configuracion", null);
+                return 600; //10 min para descargar o subir una cancion
             }
         }
 

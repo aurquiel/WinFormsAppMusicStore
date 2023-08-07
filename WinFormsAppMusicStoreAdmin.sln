@@ -15,6 +15,8 @@ Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClassLibraryExcel", "ClassLibraryExcel\ClassLibraryExcel.csproj", "{AF99A949-6C48-4AB4-BFB2-8D620D22A9F4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibraryChainOfResponsabilty", "ClassLibraryChainOfResponsabilty\ClassLibraryChainOfResponsabilty.csproj", "{2758D9E6-8164-4017-81F9-6789713A4A94}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +45,10 @@ Global
 		{AF99A949-6C48-4AB4-BFB2-8D620D22A9F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF99A949-6C48-4AB4-BFB2-8D620D22A9F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AF99A949-6C48-4AB4-BFB2-8D620D22A9F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2758D9E6-8164-4017-81F9-6789713A4A94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2758D9E6-8164-4017-81F9-6789713A4A94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2758D9E6-8164-4017-81F9-6789713A4A94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2758D9E6-8164-4017-81F9-6789713A4A94}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

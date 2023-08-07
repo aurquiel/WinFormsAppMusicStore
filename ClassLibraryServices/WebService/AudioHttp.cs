@@ -8,7 +8,7 @@ namespace ClassLibraryServices.WebService
 {
     internal class AudioHttp
     {
-        internal static async Task<(bool, string, GeneralAnswer<string>)> GetAudioList(WebServiceParams _params)
+        internal static async Task<(bool, string, GeneralAnswer<string>)> GetAudioList(WebServiceParams _params, CancellationToken token)
         {
             try
             {
@@ -19,7 +19,7 @@ namespace ClassLibraryServices.WebService
                 httpClient.Timeout = TimeSpan.FromSeconds(_params._TIMEOUT_WEB_SERVICE);
                 httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _params._TOKEN_WEB_SERVICE);
 
-                var response = await httpClient.GetAsync(_params._IP_WEB_SERVICE + $"api/Audio/DownloadAudioListServer");
+                var response = await httpClient.GetAsync(_params._IP_WEB_SERVICE + $"api/Audio/DownloadAudioListServer", token);
 
                 if (response.StatusCode == System.Net.HttpStatusCode.OK)
                 {
@@ -47,7 +47,7 @@ namespace ClassLibraryServices.WebService
             }
         }
 
-        internal static async Task<(bool, string, GeneralAnswer<string>)> GetAudioListStore(WebServiceParams _params, string storeCode)
+        internal static async Task<(bool, string, GeneralAnswer<string>)> GetAudioListStore(WebServiceParams _params, string storeCode, CancellationToken token)
         {
             try
             {         
@@ -57,7 +57,7 @@ namespace ClassLibraryServices.WebService
                 httpClient.Timeout = TimeSpan.FromSeconds(_params._TIMEOUT_WEB_SERVICE);
                 httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _params._TOKEN_WEB_SERVICE);
 
-                var response = await httpClient.GetAsync(_params._IP_WEB_SERVICE + $"api/Audio/DownloadAudioListStore/{storeCode}");
+                var response = await httpClient.GetAsync(_params._IP_WEB_SERVICE + $"api/Audio/DownloadAudioListStore/{storeCode}", token);
 
                 if (response.StatusCode == System.Net.HttpStatusCode.OK)
                 {
@@ -85,7 +85,7 @@ namespace ClassLibraryServices.WebService
             }
         }
         
-        internal static async Task<(bool, string, GeneralAnswer<string>)> SynchronizeAudioListStore(WebServiceParams _params, string audioList, string storeCode)
+        internal static async Task<(bool, string, GeneralAnswer<string>)> SynchronizeAudioListStore(WebServiceParams _params, string audioList, string storeCode, CancellationToken token)
         {
             try
             {
@@ -98,7 +98,7 @@ namespace ClassLibraryServices.WebService
                 string json = JsonSerializer.Serialize(new SynchronizeAudioListStoreInfo { audioList = audioList, storeCode = storeCode});
                 var data = new StringContent(json, Encoding.UTF8, "application/json");
 
-                var response = await client.PostAsync(_params._IP_WEB_SERVICE + $"api/Audio/SynchronizeAudioListStore", data);
+                var response = await client.PostAsync(_params._IP_WEB_SERVICE + $"api/Audio/SynchronizeAudioListStore", data, token);
 
                 if (response.StatusCode == System.Net.HttpStatusCode.OK)
                 {
@@ -126,7 +126,7 @@ namespace ClassLibraryServices.WebService
             }
         }
 
-        internal static async Task<(bool, string, GeneralAnswer<string>)> SynchronizeAudioListAllStore(WebServiceParams _params)
+        internal static async Task<(bool, string, GeneralAnswer<string>)> SynchronizeAudioListAllStore(WebServiceParams _params, CancellationToken token)
         {
             try
             {
@@ -136,7 +136,7 @@ namespace ClassLibraryServices.WebService
                 client.Timeout = TimeSpan.FromSeconds(_params._TIMEOUT_WEB_SERVICE);
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _params._TOKEN_WEB_SERVICE);
 
-                var response = await client.PostAsync(_params._IP_WEB_SERVICE + $"api/Audio/SynchronizeAudioListAllStore", null);
+                var response = await client.PostAsync(_params._IP_WEB_SERVICE + $"api/Audio/SynchronizeAudioListAllStore", null, token);
 
                 if (response.StatusCode == System.Net.HttpStatusCode.OK)
                 {
@@ -164,14 +164,14 @@ namespace ClassLibraryServices.WebService
             }
         }
 
-        internal static async Task<(bool, string, GeneralAnswer<object>)> UploadAudio(WebServiceParams _params, string filePath)
+        internal static async Task<(bool, string, GeneralAnswer<object>)> UploadAudio(WebServiceParams _params, string filePath, CancellationToken token)
         {
             try
             {
                 HttpClientHandler handler = new HttpClientHandler();
                 handler.ServerCertificateCustomValidationCallback = Certificate.ValidateServerCertificate;
                 var client = new HttpClient(handler);
-                client.Timeout = TimeSpan.FromSeconds(_params._TIMEOUT_WEB_SERVICE);
+                client.Timeout = TimeSpan.FromSeconds(_params._TIMEOUT_WEB_SERVICE_HEAVY_TASK);
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _params._TOKEN_WEB_SERVICE);
 
                 var form = new MultipartFormDataContent();
@@ -184,7 +184,7 @@ namespace ClassLibraryServices.WebService
 
                 form.Add(byteContent, "file", Path.GetFileName(filePath));
 
-                var response = await client.PostAsync(_params._IP_WEB_SERVICE + $"api/Audio/UploadAudio",form);
+                var response = await client.PostAsync(_params._IP_WEB_SERVICE + $"api/Audio/UploadAudio",form, token);
 
                 if (response.StatusCode == System.Net.HttpStatusCode.OK)
                 {
@@ -210,7 +210,7 @@ namespace ClassLibraryServices.WebService
             }
         }
 
-        internal static async Task<(bool, string, object)> DownloadAudio(WebServiceParams _params, string storeCode, string audioName, IFileManager fileManager)
+        internal static async Task<(bool, string, object)> DownloadAudio(WebServiceParams _params, string storeCode, string audioName, IFileManager fileManager, CancellationToken token)
         {
             try
             {
@@ -219,11 +219,11 @@ namespace ClassLibraryServices.WebService
 
                 var client = new HttpClient(handler);
 
-                client.Timeout = TimeSpan.FromSeconds(_params._TIMEOUT_WEB_SERVICE);
+                client.Timeout = TimeSpan.FromSeconds(_params._TIMEOUT_WEB_SERVICE_HEAVY_TASK);
 
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _params._TOKEN_WEB_SERVICE);
 
-                var response = await client.GetAsync(_params._IP_WEB_SERVICE + $"api/Audio/DownloadAudio/" + audioName);
+                var response = await client.GetAsync(_params._IP_WEB_SERVICE + $"api/Audio/DownloadAudio/" + audioName, token);
 
                 if (response.StatusCode == System.Net.HttpStatusCode.OK)
                 {
@@ -256,7 +256,7 @@ namespace ClassLibraryServices.WebService
             }
         }
 
-        internal static async Task<(bool, string, GeneralAnswer<string>)> DeleteAudio(WebServiceParams _params, string audioName)
+        internal static async Task<(bool, string, GeneralAnswer<string>)> DeleteAudio(WebServiceParams _params, string audioName, CancellationToken token)
         {
             try
             {
@@ -272,7 +272,7 @@ namespace ClassLibraryServices.WebService
                 var client = new HttpClient(handler);
                 client.Timeout = TimeSpan.FromSeconds(_params._TIMEOUT_WEB_SERVICE);
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _params._TOKEN_WEB_SERVICE);
-                var response = await client.SendAsync(request);
+                var response = await client.SendAsync(request, token);
 
                 if (response.StatusCode == System.Net.HttpStatusCode.OK)
                 {

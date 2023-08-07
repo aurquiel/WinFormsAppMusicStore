@@ -67,22 +67,24 @@ namespace WinFormsAppMusicStore
 
         private void LaunchOperationWaitForm(List<OperationDetails> operationDetails)
         {
-            FormOperationAndWait formWait = new FormOperationAndWait(
+            using (FormOperationAndWait formWait = new FormOperationAndWait(
                 _services,
                 _fileManager,
                 operationDetails,
-                _raiseRichTextInsertMessage);
-            formWait.ShowDialog();
+                _raiseRichTextInsertMessage))
+            {
+                formWait.ShowDialog();
 
-            if (formWait.AudioList != null)
-            {
-                BindListbox(formWait.AudioList);
-                listBoxAudio.ClearSelected();
-            }
-            else
-            {
-                _audioListPlayer.Clear();
-            }
+                if (formWait.AudioList != null)
+                {
+                    BindListbox(formWait.AudioList);
+                    listBoxAudio.ClearSelected();
+                }
+                else
+                {
+                    _audioListPlayer.Clear();
+                }
+            } 
         }
 
         private void LoadAudioListFromBinaryFile()

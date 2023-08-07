@@ -19,9 +19,9 @@ namespace ClassLibraryServices.WebService
             _fileManager = fileManager;
         }
 
-        public async Task<GeneralAnswer<string>> DownloadAudioListServer()
+        public async Task<GeneralAnswer<string>> DownloadAudioListServer(CancellationToken token)
         {
-            var result = await AudioHttp.GetAudioList(_webParams);
+            var result = await AudioHttp.GetAudioList(_webParams, token);
 
             if (result.Item1) //Obtenido del servidor
             {
@@ -33,9 +33,9 @@ namespace ClassLibraryServices.WebService
             }
         }
 
-        public async Task<GeneralAnswer<string>> DownloadAudioListStore(string storeCode)
+        public async Task<GeneralAnswer<string>> DownloadAudioListStore(string storeCode, CancellationToken token)
         {
-            var result = await AudioHttp.GetAudioListStore(_webParams, storeCode);
+            var result = await AudioHttp.GetAudioListStore(_webParams, storeCode, token);
 
             if (result.Item1) //Obtenido del servidor
             {
@@ -47,9 +47,9 @@ namespace ClassLibraryServices.WebService
             }
         }
 
-        public async Task<GeneralAnswer<string>> SynchronizeAudioListStore(string audioList, string storeCode)
+        public async Task<GeneralAnswer<string>> SynchronizeAudioListStore(string audioList, string storeCode, CancellationToken token)
         {
-            var result = await AudioHttp.SynchronizeAudioListStore(_webParams, audioList, storeCode);
+            var result = await AudioHttp.SynchronizeAudioListStore(_webParams, audioList, storeCode, token);
 
             if (result.Item1) //Obtenido del servidor
             {
@@ -61,23 +61,23 @@ namespace ClassLibraryServices.WebService
             }
         }
 
-        public async Task<GeneralAnswer<object>> UploadAudioServer(string pathFile)
+        public async Task<GeneralAnswer<object>> UploadAudioServer(string pathFile, CancellationToken token)
         {
-            var result = await AudioHttp.UploadAudio(_webParams, pathFile);
+            var result = await AudioHttp.UploadAudio(_webParams, pathFile, token);
 
             return new GeneralAnswer<object>(result.Item1, result.Item2, null);
         }
 
-        public async Task<GeneralAnswer<object>> DownloadAudioServer(string storeCode, string audioName)
+        public async Task<GeneralAnswer<object>> DownloadAudioServer(string storeCode, string audioName, CancellationToken token)
         {
-            var result = await AudioHttp.DownloadAudio(_webParams, storeCode, audioName, _fileManager);
+            var result = await AudioHttp.DownloadAudio(_webParams, storeCode, audioName, _fileManager, token);
 
             return new GeneralAnswer<object>(result.Item1, result.Item2, null);
         }
 
-        public async Task<GeneralAnswer<object>> DeleteAudioServer(string audioName)
+        public async Task<GeneralAnswer<object>> DeleteAudioServer(string audioName, CancellationToken token)
         {
-            var result = await AudioHttp.DeleteAudio(_webParams, audioName);
+            var result = await AudioHttp.DeleteAudio(_webParams, audioName, token);
 
             if (result.Item1) //Obtenido del servidor
             {
@@ -89,9 +89,9 @@ namespace ClassLibraryServices.WebService
             }
         }
 
-        public async Task<GeneralAnswer<object>> SynchronizeAudioListAllStore()
+        public async Task<GeneralAnswer<object>> SynchronizeAudioListAllStore(CancellationToken token)
         {
-            var result = await AudioHttp.SynchronizeAudioListAllStore(_webParams);
+            var result = await AudioHttp.SynchronizeAudioListAllStore(_webParams, token);
 
             if (result.Item1) //Obtenido del servidor
             {
