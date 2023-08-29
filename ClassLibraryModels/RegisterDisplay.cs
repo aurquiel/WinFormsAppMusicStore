@@ -9,7 +9,8 @@ namespace ClassLibraryModels
     public class RegisterDisplay
     {
         public string storeCode { get; set; }
-        public string operation { get; set; }
+        public string activity { get; set; }
+        public string message { get; set; }
         public DateTime creationDateTime { get; set; }
     }
 }

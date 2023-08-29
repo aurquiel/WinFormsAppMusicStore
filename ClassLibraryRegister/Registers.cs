@@ -1,24 +1,19 @@
 ﻿using ClassLibraryModels;
 using ClassLibraryServices;
 using Serilog;
-using System;
-using System.Collections.Concurrent;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace WinFormsAppMusicStore
+namespace ClassLibraryRegister
 {
-    internal class InsertRegisters
+    public class Registers
     {
         private IServices _services;
         private int _storeId;
         private ILogger _logger;
         private Thread _thread;
+        public int Activity { get; set; }
         public string Message { get; set; }
 
-        public InsertRegisters(IServices services, int storeId, ILogger logger)
+        public Registers(IServices services, int storeId, ILogger logger)
         {
             _services = services;
             _storeId = storeId;
@@ -26,17 +21,23 @@ namespace WinFormsAppMusicStore
             _thread = new Thread(() => { DoWork(); });
         }
 
-        public void StarRegister()
+        public void StarRegistering()
         {
             _thread.Start();
         }
 
+        public void SetRegister(int activity, string message)
+        {
+            Activity = activity;
+            Message = message;
+        }
+
         private async void DoWork()
         {
-            while(true)
+            while (true)
             {
-                var result = await _services.RegisterService.RegisterInsert(new Register { storeId = _storeId, operation = Message, creationDateTime = DateTime.Now});
-                if(result.status == false)
+                var result = await _services.RegisterService.RegisterInsert(new Register { storeId = _storeId, activity = Activity, message = Message, creationDateTime = DateTime.Now });
+                if (result.status == false)
                 {
                     _logger.Error("Error al insertar registro Thread, " + result.statusMessage);
                 }

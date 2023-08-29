@@ -5,7 +5,6 @@
     <TargetFramework>net6.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
-	<UseWPF>true</UseWPF>
     <ImplicitUsings>enable</ImplicitUsings>
     <ApplicationIcon>icon.ico</ApplicationIcon>
   </PropertyGroup>
@@ -75,6 +74,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="LiveChartsCore.SkiaSharpView.WinForms" Version="2.0.0-beta.920" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.1" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.1" />
     <PackageReference Include="Serilog" Version="3.0.1" />
@@ -83,8 +83,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ChainOfResponsibilityClassLibrary\ChainOfResponsibilityClassLibrary.csproj" />
     <ProjectReference Include="..\ClassLibraryExcel\ClassLibraryExcel.csproj" />
     <ProjectReference Include="..\ClassLibraryFiles\ClassLibraryFiles.csproj" />
+    <ProjectReference Include="..\ClassLibraryPlayer\ClassLibraryPlayer.csproj" />
+    <ProjectReference Include="..\ClassLibraryRegister\ClassLibraryRegister.csproj" />
     <ProjectReference Include="..\ClassLibraryServices\ClassLibraryServices.csproj" />
   </ItemGroup>
 

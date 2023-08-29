@@ -7,7 +7,7 @@ namespace ClassLibraryServices.WebService
 {
     internal class RegisterHttp
     {
-        internal static async Task<(bool, string, GeneralAnswer<List<Register>>)> RegisterGetByDate(WebServiceParams _params, DateTime date)
+        internal static async Task<(bool, string, GeneralAnswer<List<Register>>)> RegisterGetByMonth(WebServiceParams _params, int storeId, DateTime date)
         {
             try
             {
@@ -17,7 +17,7 @@ namespace ClassLibraryServices.WebService
                 var client = new HttpClient(handler);
                 client.Timeout = TimeSpan.FromSeconds(_params._TIMEOUT_WEB_SERVICE);
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _params._TOKEN_WEB_SERVICE);
-                var response = await client.GetAsync(_params._IP_WEB_SERVICE + $"api/Register/GetRegistersByDate/{date.ToString("dd-MM-yyyy")}");
+                var response = await client.GetAsync(_params._IP_WEB_SERVICE + $"api/Register/GetRegistersByMonth/{storeId}/{date.ToString("dd-MM-yyyy")}");
 
                 if (response.StatusCode == System.Net.HttpStatusCode.OK)
                 {

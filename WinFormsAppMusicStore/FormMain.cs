@@ -4,7 +4,7 @@ using ClassLibraryServices;
 using Serilog;
 using System.Data;
 
-namespace WinFormsAppMusicStore
+namespace WinFormsAppMusicStoreAdmin
 {
     public partial class FormMain : Form
     {
@@ -25,7 +25,7 @@ namespace WinFormsAppMusicStore
             _user = user;
             _stores = stores;
             _fileManager = new FileManager();
-            OpenChildForm(new UserControlPlayer(_services, _fileManager, _logger, _user, stores, _raiseRichTextInsertMessage));
+            OpenChildForm(new UserControlPlayer(_user, _services, _fileManager, _logger, _stores, _raiseRichTextInsertMessage));
         }
 
         protected override CreateParams CreateParams
@@ -79,7 +79,6 @@ namespace WinFormsAppMusicStore
             richTextBoxStatusMessages.ScrollToCaret();
             richTextBoxStatusMessages.ResumeLayout();
         }
-
 
         private void OpenChildForm(UserControl childForm)
         {

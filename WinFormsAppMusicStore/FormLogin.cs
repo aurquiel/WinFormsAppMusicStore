@@ -5,7 +5,7 @@ using ClassLibraryServices.WebService;
 using Serilog;
 using System.Configuration;
 
-namespace WinFormsAppMusicStore
+namespace WinFormsAppMusicStoreAdmin
 {
     public partial class FormLogin : Form
     {
@@ -29,7 +29,7 @@ namespace WinFormsAppMusicStore
             }
             catch (Exception ex)
             {
-                _logger.Error(ex, "Error al obtener ip del webserice del archivo de configuracion", null);
+                _logger.Error(ex, "Error al obtner ip del webserice del archivo de configuracion", null);
                 return "https://192.168.0.203:9097/";
             }
         }
@@ -42,7 +42,7 @@ namespace WinFormsAppMusicStore
             }
             catch (Exception ex)
             {
-                _logger.Error(ex, "Error al obtener timeout del webserice del archivo de configuracion", null);
+                _logger.Error(ex, "Error al obtner timeout del webserice del archivo de configuracion", null);
                 return 25;
             }
         }

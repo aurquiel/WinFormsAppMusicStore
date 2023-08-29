@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33723.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinFormsAppMusicStore", "WinFormsAppMusicStore\WinFormsAppMusicStore.csproj", "{CCAD53D8-B843-4C4C-9E3D-E35ADEF96198}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinFormsAppMusicStoreAdmin", "WinFormsAppMusicStore\WinFormsAppMusicStoreAdmin.csproj", "{CCAD53D8-B843-4C4C-9E3D-E35ADEF96198}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClassLibraryServices", "ClassLibraryServices\ClassLibraryServices.csproj", "{B0C438FF-1FB8-4CEA-A59D-3992E83791C0}"
 EndProject
@@ -15,7 +15,11 @@ Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClassLibraryExcel", "ClassLibraryExcel\ClassLibraryExcel.csproj", "{AF99A949-6C48-4AB4-BFB2-8D620D22A9F4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibraryChainOfResponsabilty", "ClassLibraryChainOfResponsabilty\ClassLibraryChainOfResponsabilty.csproj", "{2758D9E6-8164-4017-81F9-6789713A4A94}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChainOfResponsibilityClassLibrary", "ChainOfResponsibilityClassLibrary\ChainOfResponsibilityClassLibrary.csproj", "{FA67F8DE-FAB6-44E7-A242-9CAACFAD5782}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClassLibraryPlayer", "ClassLibraryPlayer\ClassLibraryPlayer.csproj", "{00CEEDD5-121B-42B7-9465-ED1F6B25667B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibraryRegister", "ClassLibraryRegister\ClassLibraryRegister.csproj", "{753C2A8D-6D18-45A5-AAEE-4EDAAB35EF9D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,10 +49,18 @@ Global
 		{AF99A949-6C48-4AB4-BFB2-8D620D22A9F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF99A949-6C48-4AB4-BFB2-8D620D22A9F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AF99A949-6C48-4AB4-BFB2-8D620D22A9F4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2758D9E6-8164-4017-81F9-6789713A4A94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2758D9E6-8164-4017-81F9-6789713A4A94}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2758D9E6-8164-4017-81F9-6789713A4A94}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2758D9E6-8164-4017-81F9-6789713A4A94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA67F8DE-FAB6-44E7-A242-9CAACFAD5782}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA67F8DE-FAB6-44E7-A242-9CAACFAD5782}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA67F8DE-FAB6-44E7-A242-9CAACFAD5782}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA67F8DE-FAB6-44E7-A242-9CAACFAD5782}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00CEEDD5-121B-42B7-9465-ED1F6B25667B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00CEEDD5-121B-42B7-9465-ED1F6B25667B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00CEEDD5-121B-42B7-9465-ED1F6B25667B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00CEEDD5-121B-42B7-9465-ED1F6B25667B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{753C2A8D-6D18-45A5-AAEE-4EDAAB35EF9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{753C2A8D-6D18-45A5-AAEE-4EDAAB35EF9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{753C2A8D-6D18-45A5-AAEE-4EDAAB35EF9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{753C2A8D-6D18-45A5-AAEE-4EDAAB35EF9D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

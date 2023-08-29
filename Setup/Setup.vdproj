@@ -25,6 +25,12 @@
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
+        "Entry"
+        {
+        "MsmKey" = "8:_E0CDC98D58F04A8B85FEEBD0D04D6DC1"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
     }
     "Configurations"
     {
@@ -50,6 +56,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
         "Release"
@@ -134,6 +148,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_E0CDC98D58F04A8B85FEEBD0D04D6DC1"
+            {
+            "SourcePath" = "8:..\\WinFormsAppMusicStore\\bin\\Release\\net6.0-windows\\WinFormsAppMusicStoreAdmin.deps.json"
+            "TargetName" = "8:WinFormsAppMusicStoreAdmin.deps.json"
+            "Tag" = "8:"
+            "Folder" = "8:_5AF2569A43B6428B81D6652A203C9254"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
         }
         "FileType"
         {
@@ -190,9 +224,9 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Music Store"
-        "ProductCode" = "8:{260355D0-4549-4E7B-B2D8-DCE2B62C435D}"
-        "PackageCode" = "8:{F44EA10F-14B0-4140-BD17-C7F592A6223B}"
-        "UpgradeCode" = "8:{AE11C0CD-E7DD-4FC7-90E0-ACB41C3B621E}"
+        "ProductCode" = "8:{694479FE-A8D9-4D67-91A8-F25F291DC94D}"
+        "PackageCode" = "8:{32017E87-735E-4B01-B0A3-45995CA9A552}"
+        "UpgradeCode" = "8:{DA879670-A5DB-48C1-8CD9-1242C63210F7}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:FALSE"
@@ -313,7 +347,7 @@
         {
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_F39402234F434A0A89C081B07DE4EE16"
             {
-            "Name" = "8:Music Store"
+            "Name" = "8:Music Store Admin"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"

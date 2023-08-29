@@ -8,7 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Serilog;
 
-namespace WinFormsAppMusicStore
+namespace WinFormsAppMusicStoreAdmin
 {
     internal static class Program
     {

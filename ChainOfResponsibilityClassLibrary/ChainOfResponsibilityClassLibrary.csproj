@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="ServerUploadAudioHandler.cs~RF1e5282e1.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ClassLibraryModels\ClassLibraryModels.csproj" />
+    <ProjectReference Include="..\ClassLibraryServices\ClassLibraryServices.csproj" />
+  </ItemGroup>
+
+</Project>

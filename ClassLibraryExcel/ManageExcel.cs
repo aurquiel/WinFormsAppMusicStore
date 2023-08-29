@@ -34,8 +34,9 @@ namespace ClassLibraryExcel
             try
             {
                 workSheet.Cells[1, 1].Value = "Tienda";
-                workSheet.Cells[1, 2].Value = "Operacion";
-                workSheet.Cells[1, 3].Value = "Fecha";
+                workSheet.Cells[1, 2].Value = "Actividad";
+                workSheet.Cells[1, 3].Value = "Operacion";
+                workSheet.Cells[1, 4].Value = "Fecha";
 
                 int col = 1;
                 int row = 2;
@@ -44,10 +45,12 @@ namespace ClassLibraryExcel
                 {
                     workSheet.Cells[row, col].Value = item.storeCode;
                     col++;
-                    workSheet.Cells[row, col].Value = item.operation;
+                    workSheet.Cells[row, col].Value = item.activity;
+                    col++;
+                    workSheet.Cells[row, col].Value = item.message;
                     col++;
                     workSheet.Cells[row, col].Value = item.creationDateTime.ToString("dd/MM/yyyy HH:mm");
-                    col++;
+                    col = 1;
                     row++;
                 }
 

@@ -17,9 +17,9 @@ namespace ClassLibraryServices.WebService
             _webParams = webParams;
         }
 
-        public async Task<GeneralAnswer<List<Register>>> GetRegisterByDate(DateTime date)
+        public async Task<GeneralAnswer<List<Register>>> GetRegisterByMonth(int storeId, DateTime date)
         {
-            var result = await RegisterHttp.RegisterGetByDate(_webParams, date);
+            var result = await RegisterHttp.RegisterGetByMonth(_webParams, storeId, date);
 
             if (result.Item1) //Obtenido del servidor
             {
