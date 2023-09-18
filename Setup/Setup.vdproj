@@ -224,8 +224,8 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Music Store"
-        "ProductCode" = "8:{694479FE-A8D9-4D67-91A8-F25F291DC94D}"
-        "PackageCode" = "8:{32017E87-735E-4B01-B0A3-45995CA9A552}"
+        "ProductCode" = "8:{D0306A9F-0838-4385-9168-1875F49CD26C}"
+        "PackageCode" = "8:{B8D55834-AC3D-4D48-AE84-CAF2AA7B98BA}"
         "UpgradeCode" = "8:{DA879670-A5DB-48C1-8CD9-1242C63210F7}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -347,7 +347,7 @@
         {
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_F39402234F434A0A89C081B07DE4EE16"
             {
-            "Name" = "8:Music Store Admin"
+            "Name" = "8:Music Store"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"

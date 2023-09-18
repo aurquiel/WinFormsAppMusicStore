@@ -30,6 +30,7 @@
         {
             tableLayoutPanel = new TableLayoutPanel();
             panel2 = new Panel();
+            buttonLoadAudioListPc = new Button();
             labelTotalTime = new Label();
             label4 = new Label();
             labelCurrentTime = new Label();
@@ -44,7 +45,6 @@
             listBoxAudio = new ListBox();
             panel4 = new Panel();
             panel5 = new Panel();
-            buttonLoadAudioListPc = new Button();
             tableLayoutPanel.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)trackBarVolume).BeginInit();
@@ -66,7 +66,7 @@
             tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 24F));
             tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 44F));
-            tableLayoutPanel.Size = new Size(814, 391);
+            tableLayoutPanel.Size = new Size(997, 391);
             tableLayoutPanel.TabIndex = 4;
             // 
             // panel2
@@ -86,8 +86,23 @@
             panel2.Dock = DockStyle.Fill;
             panel2.Location = new Point(3, 350);
             panel2.Name = "panel2";
-            panel2.Size = new Size(808, 38);
+            panel2.Size = new Size(991, 38);
             panel2.TabIndex = 22;
+            // 
+            // buttonLoadAudioListPc
+            // 
+            buttonLoadAudioListPc.BackColor = Color.White;
+            buttonLoadAudioListPc.FlatStyle = FlatStyle.Flat;
+            buttonLoadAudioListPc.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonLoadAudioListPc.ForeColor = Color.Black;
+            buttonLoadAudioListPc.Image = Properties.Resources.pc;
+            buttonLoadAudioListPc.Location = new Point(3, 3);
+            buttonLoadAudioListPc.Name = "buttonLoadAudioListPc";
+            buttonLoadAudioListPc.Size = new Size(32, 27);
+            buttonLoadAudioListPc.TabIndex = 33;
+            buttonLoadAudioListPc.TextAlign = ContentAlignment.MiddleLeft;
+            buttonLoadAudioListPc.UseVisualStyleBackColor = false;
+            buttonLoadAudioListPc.Click += buttonLoadAudioListPc_Click;
             // 
             // labelTotalTime
             // 
@@ -215,7 +230,7 @@
             label1.ForeColor = Color.Blue;
             label1.Location = new Point(3, 0);
             label1.Name = "label1";
-            label1.Size = new Size(808, 24);
+            label1.Size = new Size(991, 24);
             label1.TabIndex = 2;
             label1.Text = "REPRODUCTOR";
             label1.TextAlign = ContentAlignment.MiddleCenter;
@@ -229,7 +244,7 @@
             listBoxAudio.Location = new Point(3, 27);
             listBoxAudio.Name = "listBoxAudio";
             listBoxAudio.ScrollAlwaysVisible = true;
-            listBoxAudio.Size = new Size(808, 317);
+            listBoxAudio.Size = new Size(991, 317);
             listBoxAudio.TabIndex = 0;
             listBoxAudio.MouseDoubleClick += listBoxAudio_MouseDoubleClick;
             // 
@@ -240,8 +255,8 @@
             panel4.Dock = DockStyle.Fill;
             panel4.Location = new Point(0, 0);
             panel4.Name = "panel4";
-            panel4.Padding = new Padding(4, 4, 4, 4);
-            panel4.Size = new Size(822, 399);
+            panel4.Padding = new Padding(4);
+            panel4.Size = new Size(1005, 399);
             panel4.TabIndex = 6;
             // 
             // panel5
@@ -251,23 +266,8 @@
             panel5.Dock = DockStyle.Fill;
             panel5.Location = new Point(4, 4);
             panel5.Name = "panel5";
-            panel5.Size = new Size(814, 391);
+            panel5.Size = new Size(997, 391);
             panel5.TabIndex = 3;
-            // 
-            // buttonLoadAudioListPc
-            // 
-            buttonLoadAudioListPc.BackColor = Color.White;
-            buttonLoadAudioListPc.FlatStyle = FlatStyle.Flat;
-            buttonLoadAudioListPc.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonLoadAudioListPc.ForeColor = Color.Black;
-            buttonLoadAudioListPc.Image = Properties.Resources.pc;
-            buttonLoadAudioListPc.Location = new Point(3, 3);
-            buttonLoadAudioListPc.Name = "buttonLoadAudioListPc";
-            buttonLoadAudioListPc.Size = new Size(32, 27);
-            buttonLoadAudioListPc.TabIndex = 33;
-            buttonLoadAudioListPc.TextAlign = ContentAlignment.MiddleLeft;
-            buttonLoadAudioListPc.UseVisualStyleBackColor = false;
-            buttonLoadAudioListPc.Click += buttonLoadAudioListPc_Click;
             // 
             // UserControlPlayer
             // 

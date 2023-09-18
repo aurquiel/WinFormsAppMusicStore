@@ -67,6 +67,10 @@ namespace ClassLibraryPlayer
         public void Stop()
         {
             _outputDevice.Stop();
+            if (_audioFile != null)
+            {
+                _audioFile.Close();
+            }
         }
 
         public void Pause()

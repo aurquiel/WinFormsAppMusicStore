@@ -141,7 +141,7 @@
             label3.Name = "label3";
             label3.Size = new Size(434, 54);
             label3.TabIndex = 16;
-            label3.Text = "MUSICA TIENDAS ADMINISTRATIVA";
+            label3.Text = "MUSICA TIENDAS";
             label3.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // FormLogin
