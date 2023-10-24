@@ -22,7 +22,7 @@ namespace WinFormsAppMusicStoreAdmin.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace WinFormsAppMusicStoreAdmin.Properties {
         ///   Devuelve la instancia de ResourceManager almacenada en caché utilizada por esta clase.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("WinFormsAppMusicStoreAdmin.Properties.Resources", typeof(Resources).Assembly);
@@ -51,7 +51,7 @@ namespace WinFormsAppMusicStoreAdmin.Properties {
         ///   búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace WinFormsAppMusicStoreAdmin.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap add {
+        public static System.Drawing.Bitmap add {
             get {
                 object obj = ResourceManager.GetObject("add", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -73,7 +73,7 @@ namespace WinFormsAppMusicStoreAdmin.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap app {
+        public static System.Drawing.Bitmap app {
             get {
                 object obj = ResourceManager.GetObject("app", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -83,7 +83,27 @@ namespace WinFormsAppMusicStoreAdmin.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap back {
+        public static System.Drawing.Bitmap arrange {
+            get {
+                object obj = ResourceManager.GetObject("arrange", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Byte[].
+        /// </summary>
+        public static byte[] AudioStoreLocal {
+            get {
+                object obj = ResourceManager.GetObject("AudioStoreLocal", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap back {
             get {
                 object obj = ResourceManager.GetObject("back", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -93,7 +113,7 @@ namespace WinFormsAppMusicStoreAdmin.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap cancel {
+        public static System.Drawing.Bitmap cancel {
             get {
                 object obj = ResourceManager.GetObject("cancel", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -103,7 +123,7 @@ namespace WinFormsAppMusicStoreAdmin.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap close {
+        public static System.Drawing.Bitmap close {
             get {
                 object obj = ResourceManager.GetObject("close", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -113,7 +133,7 @@ namespace WinFormsAppMusicStoreAdmin.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap delete {
+        public static System.Drawing.Bitmap delete {
             get {
                 object obj = ResourceManager.GetObject("delete", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -123,7 +143,7 @@ namespace WinFormsAppMusicStoreAdmin.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap downArrow {
+        public static System.Drawing.Bitmap downArrow {
             get {
                 object obj = ResourceManager.GetObject("downArrow", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -133,7 +153,7 @@ namespace WinFormsAppMusicStoreAdmin.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap edit {
+        public static System.Drawing.Bitmap edit {
             get {
                 object obj = ResourceManager.GetObject("edit", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -143,7 +163,7 @@ namespace WinFormsAppMusicStoreAdmin.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap erase {
+        public static System.Drawing.Bitmap erase {
             get {
                 object obj = ResourceManager.GetObject("erase", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -153,7 +173,7 @@ namespace WinFormsAppMusicStoreAdmin.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap eraseAll {
+        public static System.Drawing.Bitmap eraseAll {
             get {
                 object obj = ResourceManager.GetObject("eraseAll", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -163,7 +183,7 @@ namespace WinFormsAppMusicStoreAdmin.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap excel {
+        public static System.Drawing.Bitmap excel {
             get {
                 object obj = ResourceManager.GetObject("excel", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -173,7 +193,7 @@ namespace WinFormsAppMusicStoreAdmin.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Icon similar a (Icono).
         /// </summary>
-        internal static System.Drawing.Icon icon {
+        public static System.Drawing.Icon icon {
             get {
                 object obj = ResourceManager.GetObject("icon", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -183,9 +203,9 @@ namespace WinFormsAppMusicStoreAdmin.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap loader {
+        public static System.Drawing.Bitmap insertAudio {
             get {
-                object obj = ResourceManager.GetObject("loader", resourceCulture);
+                object obj = ResourceManager.GetObject("insertAudio", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -193,7 +213,7 @@ namespace WinFormsAppMusicStoreAdmin.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap login {
+        public static System.Drawing.Bitmap login {
             get {
                 object obj = ResourceManager.GetObject("login", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -203,7 +223,7 @@ namespace WinFormsAppMusicStoreAdmin.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap logoMundoTotal {
+        public static System.Drawing.Bitmap logoMundoTotal {
             get {
                 object obj = ResourceManager.GetObject("logoMundoTotal", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -213,7 +233,7 @@ namespace WinFormsAppMusicStoreAdmin.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap logoMundoTotalGrande {
+        public static System.Drawing.Bitmap logoMundoTotalGrande {
             get {
                 object obj = ResourceManager.GetObject("logoMundoTotalGrande", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -223,7 +243,17 @@ namespace WinFormsAppMusicStoreAdmin.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap next {
+        public static System.Drawing.Bitmap menu {
+            get {
+                object obj = ResourceManager.GetObject("menu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap next {
             get {
                 object obj = ResourceManager.GetObject("next", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -233,7 +263,7 @@ namespace WinFormsAppMusicStoreAdmin.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap pause {
+        public static System.Drawing.Bitmap pause {
             get {
                 object obj = ResourceManager.GetObject("pause", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -243,7 +273,7 @@ namespace WinFormsAppMusicStoreAdmin.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap pc {
+        public static System.Drawing.Bitmap pc {
             get {
                 object obj = ResourceManager.GetObject("pc", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -253,7 +283,7 @@ namespace WinFormsAppMusicStoreAdmin.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap play {
+        public static System.Drawing.Bitmap play {
             get {
                 object obj = ResourceManager.GetObject("play", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -263,7 +293,7 @@ namespace WinFormsAppMusicStoreAdmin.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap refresh {
+        public static System.Drawing.Bitmap refresh {
             get {
                 object obj = ResourceManager.GetObject("refresh", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -273,7 +303,7 @@ namespace WinFormsAppMusicStoreAdmin.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap refreshListStore {
+        public static System.Drawing.Bitmap refreshListStore {
             get {
                 object obj = ResourceManager.GetObject("refreshListStore", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -283,7 +313,17 @@ namespace WinFormsAppMusicStoreAdmin.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap replicaDown {
+        public static System.Drawing.Bitmap registers {
+            get {
+                object obj = ResourceManager.GetObject("registers", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap replicaDown {
             get {
                 object obj = ResourceManager.GetObject("replicaDown", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -293,7 +333,7 @@ namespace WinFormsAppMusicStoreAdmin.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap search {
+        public static System.Drawing.Bitmap search {
             get {
                 object obj = ResourceManager.GetObject("search", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -303,7 +343,7 @@ namespace WinFormsAppMusicStoreAdmin.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap selectAll {
+        public static System.Drawing.Bitmap selectAll {
             get {
                 object obj = ResourceManager.GetObject("selectAll", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -313,7 +353,7 @@ namespace WinFormsAppMusicStoreAdmin.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap selectAudio {
+        public static System.Drawing.Bitmap selectAudio {
             get {
                 object obj = ResourceManager.GetObject("selectAudio", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -323,7 +363,27 @@ namespace WinFormsAppMusicStoreAdmin.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap stop {
+        public static System.Drawing.Bitmap selectPublicity {
+            get {
+                object obj = ResourceManager.GetObject("selectPublicity", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap selectTime {
+            get {
+                object obj = ResourceManager.GetObject("selectTime", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap stop {
             get {
                 object obj = ResourceManager.GetObject("stop", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -333,9 +393,9 @@ namespace WinFormsAppMusicStoreAdmin.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap synchronizeAllStores {
+        public static System.Drawing.Bitmap store {
             get {
-                object obj = ResourceManager.GetObject("synchronizeAllStores", resourceCulture);
+                object obj = ResourceManager.GetObject("store", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -343,7 +403,37 @@ namespace WinFormsAppMusicStoreAdmin.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap unselectAll {
+        public static System.Drawing.Bitmap synchronizeAllStores {
+            get {
+                object obj = ResourceManager.GetObject("synchronizeAllStores", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Icon similar a (Icono).
+        /// </summary>
+        public static System.Drawing.Icon timer {
+            get {
+                object obj = ResourceManager.GetObject("timer", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap tools {
+            get {
+                object obj = ResourceManager.GetObject("tools", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap unselectAll {
             get {
                 object obj = ResourceManager.GetObject("unselectAll", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -353,7 +443,7 @@ namespace WinFormsAppMusicStoreAdmin.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap upArrow {
+        public static System.Drawing.Bitmap upArrow {
             get {
                 object obj = ResourceManager.GetObject("upArrow", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -363,7 +453,7 @@ namespace WinFormsAppMusicStoreAdmin.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap upload {
+        public static System.Drawing.Bitmap upload {
             get {
                 object obj = ResourceManager.GetObject("upload", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -373,7 +463,17 @@ namespace WinFormsAppMusicStoreAdmin.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap volume {
+        public static System.Drawing.Bitmap users {
+            get {
+                object obj = ResourceManager.GetObject("users", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap volume {
             get {
                 object obj = ResourceManager.GetObject("volume", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -383,7 +483,7 @@ namespace WinFormsAppMusicStoreAdmin.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap wait {
+        public static System.Drawing.Bitmap wait {
             get {
                 object obj = ResourceManager.GetObject("wait", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));

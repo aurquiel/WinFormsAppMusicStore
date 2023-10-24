@@ -12,6 +12,7 @@
   <ItemGroup>
     <None Remove="Resources\add.png" />
     <None Remove="Resources\app.png" />
+    <None Remove="Resources\AudioStoreLocal.db" />
     <None Remove="Resources\back.png" />
     <None Remove="Resources\cancel.png" />
     <None Remove="Resources\close.png" />
@@ -25,6 +26,7 @@
     <None Remove="Resources\loader.gif" />
     <None Remove="Resources\login.png" />
     <None Remove="Resources\logoMundoTotalGrande.png" />
+    <None Remove="Resources\menu.png" />
     <None Remove="Resources\MundoTotalLogo.png" />
     <None Remove="Resources\next.png" />
     <None Remove="Resources\pause.png" />
@@ -32,21 +34,44 @@
     <None Remove="Resources\play.png" />
     <None Remove="Resources\refresh.png" />
     <None Remove="Resources\refreshListStore.png" />
+    <None Remove="Resources\registers.png" />
     <None Remove="Resources\replicaDown.png" />
     <None Remove="Resources\saveCloud.png" />
     <None Remove="Resources\search.png" />
     <None Remove="Resources\selectAll.png" />
-    <None Remove="Resources\selectAudio.png" />
+    <None Remove="Resources\selectTime.png" />
     <None Remove="Resources\stop.png" />
+    <None Remove="Resources\store.png" />
     <None Remove="Resources\synchronizeAllStores.png" />
+    <None Remove="Resources\timer.ico" />
+    <None Remove="Resources\tools.png" />
     <None Remove="Resources\unselectAll.png" />
     <None Remove="Resources\upArrow.png" />
     <None Remove="Resources\upload.png" />
+    <None Remove="Resources\users.png" />
     <None Remove="Resources\volume.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Resources\add.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\AudioStoreLocal.db">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\delete.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\edit.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="Resources\back.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\excel.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\icon.ico">
@@ -59,9 +84,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Resources\add.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
     <Resource Include="Resources\app.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
@@ -74,40 +96,35 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+    <PackageReference Include="EPPlus" Version="6.2.10" />
     <PackageReference Include="LiveChartsCore.SkiaSharpView.WinForms" Version="2.0.0-beta.920" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="6.0.22" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.22">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.1" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.1" />
+    <PackageReference Include="NAudio" Version="2.2.1" />
     <PackageReference Include="Serilog" Version="3.0.1" />
     <PackageReference Include="Serilog.Sinks.Console" Version="4.1.0" />
     <PackageReference Include="Serilog.Sinks.File" Version="5.0.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ChainOfResponsibilityClassLibrary\ChainOfResponsibilityClassLibrary.csproj" />
-    <ProjectReference Include="..\ClassLibraryExcel\ClassLibraryExcel.csproj" />
-    <ProjectReference Include="..\ClassLibraryFiles\ClassLibraryFiles.csproj" />
-    <ProjectReference Include="..\ClassLibraryPlayer\ClassLibraryPlayer.csproj" />
-    <ProjectReference Include="..\ClassLibraryRegister\ClassLibraryRegister.csproj" />
-    <ProjectReference Include="..\ClassLibraryServices\ClassLibraryServices.csproj" />
+    <ProjectReference Include="..\ClassLibraryDomain\ClassLibraryDomain.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Resources\delete.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
     <Resource Include="Resources\downArrow.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resources\edit.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\erase.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\eraseAll.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resources\excel.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\loader.gif">
@@ -117,6 +134,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\logoMundoTotalGrande.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\menu.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\MundoTotalLogo.png">
@@ -140,6 +160,9 @@
     <Resource Include="Resources\refreshListStore.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Resources\registers.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Resources\replicaDown.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
@@ -152,13 +175,22 @@
     <Resource Include="Resources\selectAll.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Resources\selectAudio.png">
+    <Resource Include="Resources\selectTime.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\stop.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Resources\store.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Resources\synchronizeAllStores.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\timer.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\tools.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\unselectAll.png">
@@ -168,6 +200,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\upload.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\users.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\volume.png">
@@ -185,7 +220,7 @@
 
   <ItemGroup>
     <EmbeddedResource Update="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
