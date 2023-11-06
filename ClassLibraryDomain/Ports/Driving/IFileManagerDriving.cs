@@ -11,7 +11,7 @@ namespace ClassLibraryDomain.Ports.Driving
     {
         string GetAudioStoreAdminPath();
         string GetLocalDbPath();
-        void CopyLocalDbIfNotExist();
+        void CopyLocalDbIfNotExistOrCorrupted();
         void CreateDirectoryAndFile();
 
         void EraseAudiosNotInAudioList(List<string> audioList);

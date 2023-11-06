@@ -1,10 +1,5 @@
-﻿using ClassLibraryDomain.Models;
-using ClassLibraryDomain.Ports.Driven;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ClassLibraryDomain.Ports.Driven;
+using WinFormsAppMusicStoreAdmin.DrivenAdapters.LocalPersistence;
 
 namespace WinFormsAppMusicStoreAdmin.DrivenAdapters.FileManager
 {
@@ -36,9 +31,13 @@ namespace WinFormsAppMusicStoreAdmin.DrivenAdapters.FileManager
             }
         }
 
-        public void CopyLocalDbIfNotExist()
+        public void CopyLocalDbIfNotExistOrCorrupted()
         {
             if(!File.Exists(AUDIO_STORE_LOCAL_DB_PATH + "\\AudioStoreLocal.db"))
+            {
+                File.WriteAllBytes(AUDIO_STORE_LOCAL_DB_PATH + "\\AudioStoreLocal.db", Properties.Resources.AudioStoreLocal);
+            }
+            else if(CheckCorruptedDatabase.Check() == false)
             {
                 File.WriteAllBytes(AUDIO_STORE_LOCAL_DB_PATH + "\\AudioStoreLocal.db", Properties.Resources.AudioStoreLocal);
             }

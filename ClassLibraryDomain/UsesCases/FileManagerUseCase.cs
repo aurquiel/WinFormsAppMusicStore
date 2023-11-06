@@ -13,9 +13,9 @@ namespace ClassLibraryDomain.UsesCases
             _fileManagerPersistencePort = fileManagerPersistencePort;
         }
 
-        public void CopyLocalDbIfNotExist()
+        public void CopyLocalDbIfNotExistOrCorrupted()
         {
-            _fileManagerPersistencePort.CopyLocalDbIfNotExist();
+            _fileManagerPersistencePort.CopyLocalDbIfNotExistOrCorrupted();
         }
 
         public string GetLocalDbPath()

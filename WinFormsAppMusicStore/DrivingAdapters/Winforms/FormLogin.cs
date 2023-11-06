@@ -21,7 +21,7 @@ namespace WinFormsAppMusicStoreAdmin.DrivingAdapters.Winforms
             _formMain = formMain;
             _logger = logger;
             _fileManagerDriving = fileManagerDriving;
-            _fileManagerDriving.CopyLocalDbIfNotExist();
+            _fileManagerDriving.CopyLocalDbIfNotExistOrCorrupted();
             _userAccessDriving = userAccessDriving;
             GetIpWebService();
             GetTimeoutWebService();
