@@ -16,7 +16,7 @@ namespace WinFormsAppMusicStoreAdmin
 {
     internal static class Program
     {
-        private static Mutex mutex = new Mutex(true, "music-store-grupototal99-egomez");
+        private static Mutex mutex = new Mutex(true, "music-store-time-grupototal99-egomez");
 
         [STAThread]
         static void Main()
